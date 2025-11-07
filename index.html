@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My iPhone Web App</title>
+
+  <!-- This line points to your app settings -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- iPhone special: make it behave like a standalone app -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <style>
+    body { font-family: -apple-system, Arial, sans-serif; margin: 0; padding: 20px; }
+    header { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+    button { padding: 12px 16px; font-size: 16px; border: 1px solid #ccc; border-radius: 8px; }
+    .card { border: 1px solid #eee; border-radius: 12px; padding: 16px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <header>🎉 Hello from my own app!</header>
+  <p>This app is just an HTML page running full screen on your iPhone.</p>
+
+  <div class="card">
+    <p>Edit <code>index.html</code> later to change text, colors, or add buttons.</p>
+    <button onclick="alert('Button works!')">Tap me</button>
+  </div>
+
+  <!-- Optional: offline support (works after we add service worker later) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(console.error);
+    }
+  </script>
+</body>
+</html>
